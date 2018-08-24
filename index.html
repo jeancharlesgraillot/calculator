@@ -6,7 +6,7 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <title></title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -27,26 +27,53 @@
   <!--Calculatrice-->
 
   <div class="calculatrice container">
-    <div class="grid row col-4 mx-auto">
-      <div id="affichage" class="col-12 px-0" style="height: 50px"></div>
-      <input type="button" value="7" class="col-3 number">
-      <input type="button" value="8" class="col-3 number">
-      <input type="button" value="9" class="col-3 number">
-      <input type="button" value="/" class="col-3 operator" id="divisor">
-      <input type="button" value="4" class="col-3 number">
-      <input type="button" value="5" class="col-3 number">
-      <input type="button" value="6" class="col-3 number">
-      <input type="button" value="*" class="col-3 operator" id="multiplicator">
-      <input type="button" value="1" class="col-3 number">
-      <input type="button" value="2" class="col-3 number">
-      <input type="button" value="3" class="col-3 number">
-      <input type="button" value="-" class="col-3 operator" id="substractor">
-      <input type="button" value="0" class="col-3 number">
-      <input type="button" value="." class="col-3 coma">
+    <div class="grid row col-4 mx-auto p-3 mt-3">
+      <div id="display" class="col-12 px-0 text-right pr-1 pt-3">0</div>
+      <input type="button" value="7" class="col-3 numbers">
+      <input type="button" value="8" class="col-3 numbers">
+      <input type="button" value="9" class="col-3 numbers">
+      <input type="button" value="/" class="col-3 operators" id="divisor">
+      <input type="button" value="4" class="col-3 numbers">
+      <input type="button" value="5" class="col-3 numbers">
+      <input type="button" value="6" class="col-3 numbers">
+      <input type="button" value="*" class="col-3 operators" id="multiplicator">
+      <input type="button" value="1" class="col-3 numbers">
+      <input type="button" value="2" class="col-3 numbers">
+      <input type="button" value="3" class="col-3 numbers">
+      <input type="button" value="-" class="col-3 operators" id="substractor">
+      <input type="button" value="0" class="col-3 numbers">
+      <input type="button" value="." class="col-3 numbers" id="coma">
       <input type="button" value="=" class="col-3" id="equal">
-      <input type="button" value="+" class="col-3 operator" id="adder">
+      <input type="button" value="+" class="col-3 operators" id="adder">
+      <input type="button" value="&#60;" class="col-3" id="back">
+      <input type="button" value="Clear" class="col-3" id="clear">
     </div>
   </div>
+
+
+  <!-- <div class="container">
+  <button id="display" class="display">0</button>
+  <button class="case" id="pourcent">%</button>
+  <button class="case" id="back">&#60;</button>
+  <button class="case" id="clear">C</button>
+  <button class="operators case">/</button>
+  <button class="numbers case">7</button>
+  <button class="numbers case">8</button>
+  <button class="numbers case">9</button>
+  <button class="operators case">*</button>
+  <button class="numbers case">4</button>
+  <button class="numbers case">5</button>
+  <button class="numbers case">6</button>
+  <button class="operators case">-</button>
+  <button class="numbers case">1</button>
+  <button class="numbers case">2</button>
+  <button class="numbers case">3</button>
+  <button class="operators case">+</button>
+  <button class="case" id="negative">+/-</button>
+  <button class="numbers case" value="0">0</button>
+  <button class="case" id="dot">.</button>
+  <button class="case" id="equal">=</button>
+</div> -->
 
 
   <script src="js/vendor/modernizr-3.6.0.min.js"></script>
