@@ -1,65 +1,59 @@
-// function getValue(value) {
-//   document.getElementByTagName("input").value;
-// }
+let numbers = document.getElementsByClassName("numbers");
+let operators = document.getElementsByClassName("operators");
+let display = document.getElementById("display");
+let clear = document.getElementById("clear");
+let equal = document.getElementById("equal");
+let back = document.getElementById("back");
+let result = "";
+// let savedValue = null;
+// let operator = "";
 
 
-function calculer(operandeGauche, operation, operandeDroite) {
-    var resultat;
-    switch (operation) {
-    case "+":
-        resultat = operandeGauche + operandeDroite;
-        break;
-    case "-":
-        resultat = operandeGauche - operandeDroite;
-        break;
-    case "*":
-        resultat = operandeGauche * operandeDroite;
-        break;
-    case "/":
-        resultat = operandeGauche / operandeDroite;
-        break;
-    }
-    return resultat;
-}
+//Browse inputs with numbers class and get their values
+for (var i = 0; i < numbers.length; i++) {
+  numbers[i].onclick = function(){
+     getValue(this);
 
-
-var inputs = document.getElementsByTagName("input");
-var result = document.getElementById("affichage");
-var array = [];
-var getOperatorClass = document.getElementsByClassName("operator");
-var getEqualId = document.getElementById("equal");
-var getNumberClass = document.getElementsByClassName("number");
-
-// $('input').click(function(){
-//   var value = $(this).val();
-//   for (var i = 0; i < inputs.length; i++) {
-//     if (inputs[i].classList.contains("operator")) {
-//       break;
-//       return value;
-//     }
-//   }
-//   result.innerHTML += value;
-//   array.push(value);
-// });
-
-
-
-function getValueAndPushArray(element) {
-  result.innerHTML += element.value;
-  array.push(element.value);
-}
-
-for (var i = 0; i < inputs.length; i++) {
-  inputs[i].onclick = function() {
-    getValueAndPushArray(this);
-    // if (inputs[i].id.contains=(equal)) {
-    //
-    // }
   };
 }
 
-console.log(array);
-
-if (true) {
-
+//Browse inputs with operators class and get their values
+for (var i = 0; i < operators.length; i++) {
+  operators[i].onclick = function() {
+    getValue(this);
+  };
 }
+
+//Function to get value of browsed inputs and display in display div
+function getValue(element){
+  result += element.value;
+  display.innerHTML = result;
+};
+
+//Function to clear what is displayed in display div
+function clearValue() {
+  result = "";
+  display.innerHTML = result;
+}
+
+//Eventlistener to call clearValue function
+clear.addEventListener('click', clearValue);
+
+
+//Function to clear previous character that is displayed in display div
+function clearPrevious() {
+  result = result.substring(0,result.length-1);
+  display.innerHTML = result;
+}
+
+//Eventlistener to call clearPrevious function
+back.addEventListener('click', clearPrevious);
+
+//Function who checks the result string, converts into numbers and do the operation
+function calcul() {
+  var convertString = eval(result);
+  display.innerHTML = convertString;
+}
+
+//EventListener to call calcul function when equal is clicked and display result
+equal.addEventListener('click', calcul);

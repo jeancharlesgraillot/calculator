@@ -288,3 +288,12 @@ textarea {
 
 
 /************************************Début*************************************/
+.grid{
+  border: 1px solid lightgrey;
+}
+
+#display{
+  
+  height: 50px;
+  border: 1px solid lightgrey;
+}
