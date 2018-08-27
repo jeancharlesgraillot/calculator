@@ -4,38 +4,34 @@ let display = document.getElementById("display");
 let clear = document.getElementById("clear");
 let equal = document.getElementById("equal");
 let back = document.getElementById("back");
-// let result = "";
-// let convertString;
-// let numbersCaption;
-// let operatorsCaption;
-let displayIsResult = false;
+let result = "";
+// let savedValue = null;
+// let operator = "";
+
 
 
 for (var i = 0; i < numbers.length; i++) {
   numbers[i].onclick = function(){
+     getValue(this);
+
+  };
+}
+
+for (var i = 0; i < operators.length; i++) {
+  operators[i].onclick = function() {
     getValue(this);
   };
 }
 
-// for (var i = 0; i < operators.length; i++) {
-//   operators[i].onclick = function() {
-//     getValue(this);
-//   };
-// }
-
 function getValue(element){
-  if (displayIsResult) {
-    display.innerHTML = element.value;
-    displayIsResult = false;
-  } else {
-    display.innerHTML += element.value;
-  }
-
+  result += element.value;
+  display.innerHTML = result;
 };
 
 
 function clearValue() {
-  display.innerHTML = "";
+  result = "";
+  display.innerHTML = result;
 }
 
 clear.addEventListener('click', clearValue);
@@ -43,23 +39,16 @@ clear.addEventListener('click', clearValue);
 
 
 function clearPrevious() {
-  display.innerHTML = result.substring(0,result.length-1);
+  result = result.substring(0,result.length-1);
+  display.innerHTML = result;
 }
 
 back.addEventListener('click', clearPrevious);
 
 
-// function calcul() {
-//   var convertString = eval(result);
-//   display.innerHTML = convertString;
-// }
-//
-// equal.addEventListener('click', calcul);
+function calcul() {
+  var convertString = eval(result);
+  display.innerHTML = convertString;
+}
 
-// function operation(+, -, *, /) {
-//   let numbersCaption = result;
-//   if (true) {
-//
-//   }
-//
-// }
+equal.addEventListener('click', calcul);
